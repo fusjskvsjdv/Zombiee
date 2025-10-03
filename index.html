@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>RIZAKYI — Change bio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&amp;family=Cairo:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"/>
+</link></head>
+<body>
+<canvas class="canvas-bg" id="bgCanvas"></canvas>
+<div class="container">
+<div class="header">
+<div class="brand">
+<div class="logo">BiO</div>
+<div>
+<div class="title"><span class="glitch" data-text="ZOMBIE~ZOMBIE">~ZOMBIE</span></div>
+</div>
+</div>
+<div class="small">المالك: <strong>Owner</strong></div>
+</div>
+<div style="text-align:center; margin:25px 0;">
+<a class="btn-video" href="https://youtu.be/8UZRq1TF0Kk?si=UqaiAlCulTWe4MjW" target="_blank">
+<i class="fab fa-youtube"></i> طريقة استعمال الموقع
+    </a>
+</div>
+<div class="main-grid">
+<main>
+<section class="card">
+<div class="hacker-title"><span style="font-family:Space Mono,monospace">›</span><h3 style="margin:0">سجل توكن جديد</h3></div>
+<form action="/add" id="formAdd" method="post">
+<div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+<input class="input" name="token" placeholder="أدخل التوكن هنا" required=""/>
+<button class="btn btn-fx" type="submit"><i class="fa-solid fa-bolt"></i> سجل</button>
+</div>
+</form>
+<div style="height:18px"></div>
+<div class="hacker-title"><span style="font-family:Space Mono,monospace">#</span><h3 style="margin:0">تغيير البايو</h3></div>
+<form action="/bio" id="formBio" method="post">
+<textarea class="input" name="bio" placeholder="نص البايو الجديد..." required=""></textarea>
+<div class="controls">
+<button class="btn btn-fx" type="submit"><i class="fa-solid fa-pen-nib"></i> تحديث</button>
+<a class="btn btn-outline" href="/reset" onclick="return confirm('هل تريد حذف التوكن؟')"><i class="fa-solid fa-trash"></i> حذف</a>
+<button class="btn btn-outline" onclick="resendLast()" type="button"><i class="fa-solid fa-rotate-right"></i> إعادة إرسال</button>
+</div>
+</form>
+<div style="height:18px"></div>
+<div class="hacker-title"><span style="font-family:Space Mono,monospace">~</span><h3 style="margin:0">التوكن الخاص بك</h3></div>
+<div id="tokens" style="margin-top:12px">
+<div class="small">لا يوجد توكن مسجل.</div>
+</div>
+</section>
+<div class="hacker-title"><span style="font-family:Space Mono,monospace">●</span><h3 style="margin:0">اعمل متابعة لي يصلك كل جديد</h3></div>
+<div class="social-icons">
+<a href="https://www.instagram.com/rizakyi" target="_blank" title="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://www.tiktok.com/@rizakyi" target="_blank" title="TikTok">
+<i class="fab fa-tiktok"></i>
+</a>
+<a href="https://t.me/rizakyi" target="_blank" title="Telegram">
+<i class="fab fa-telegram"></i>
+</a>
+<a href="https://www.instagram.com/zodiag_hex" target="_blank" title="Instagram 2">
+<i class="fab fa-instagram"></i>
+</a>
+</div>
+<section class="card" style="margin-top:18px">
+<div class="hacker-title"><span style="font-family:Space Mono,monospace">●</span><h3 style="margin:0">سجل الأحداث (أحدث أولاً)</h3></div>
+<div class="logs" id="logs">
+<div class="log-item fail"><div class="small">2025-10-03 18:58:07 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:41 - BIO(200) - 1759418346140</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:32 - ADD_OK - 1759517800875</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:57:26 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:57:18 - BIO_FAIL - NO_TOKEN - 1759517800875</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:15 - ADD_OK - 1759418346140</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:14 - ADD_OK - 1759418346140</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:14 - ADD_OK - 1759418346140</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:13 - ADD_OK - 1759418346140</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:09 - ADD_OK - 1759418346140</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:57:07 - ADD_OK - 1759418346140</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:56:54 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:56:44 - BIO(200) - 1759517564298</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:55:31 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:54:09 - ADD_OK - 1759517564298</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:53:51 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:48:19 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:48:18 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:36:26 - BIO_FAIL - NO_TOKEN - 1759515198126</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:36:11 - BIO_FAIL - NO_TOKEN - 1759515198126</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:35:56 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:34:12 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:31:07 - BIO_FAIL - NO_TOKEN - 1759516225204</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:31:06 - BIO_FAIL - NO_TOKEN - 1759516225204</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:31:06 - BIO_FAIL - NO_TOKEN - 1759516225204</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:31:04 - BIO_FAIL - NO_TOKEN - 1759516225204</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:30:34 - BIO_FAIL - NO_TOKEN - 1759515198126</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:30:34 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:30:32 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:30:15 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:29:05 - BIO_FAIL - NO_TOKEN - 1759515198126</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:28:48 - BIO(200) - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:27:40 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:25:38 - BIO(200) - 1759514454755</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:24:39 - BIO(200) - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:24:38 - BIO_FAIL - NO_TOKEN - 1759515198126</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:24:37 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:24:05 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:24:04 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:22:40 - BIO(200) - 1759514454755</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:22:25 - BIO(200) - 1759514454755</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:17:26 - BIO(200) - 1759514454755</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:17:03 - ADD_OK - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:16:50 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:16:04 - BIO(200) - 1759513481433</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:15:43 - BIO_FAIL - NO_TOKEN - 1759515198126</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:14:51 - BIO_FAIL - NO_TOKEN - 1759514845383</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:14:21 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:14:07 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:13:57 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:13:56 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:13:55 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:13:44 - BIO_FAIL - NO_TOKEN - 1759515198126</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:13:17 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:13:07 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:10:17 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:06:59 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 18:05:03 - ADD_OK - 1759513481433</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:04:23 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:04:08 - BIO_FAIL - NO_TOKEN - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:04:05 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:03:58 - BIO_FAIL - NO_TOKEN - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:03:13 - BIO_FAIL - NO_TOKEN - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:03:07 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:02:52 - BIO_FAIL - NO_TOKEN - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:02:36 - BIO_FAIL - NO_TOKEN - 1759514454755</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:02:30 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 18:01:52 - BIO_FAIL - NO_TOKEN - 1759514454755</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:58:18 - BIO(200) - 1759513481433</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:57:30 - BIO_FAIL - NO_TOKEN - 1759514197236</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:52:38 - ADD_OK - 1759513481433</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:52:35 - ADD_OK - 1759513481433</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:49:34 - BIO(200) - 1759513755719</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:49:26 - ADD_OK - 1759513755719</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:46:15 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:45:42 - BIO_FAIL - NO_TOKEN - 1759513518008</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:37:29 - BIO(200) - 1759512899688</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:37:01 - BIO(200) - 1759512899688</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:35:05 - ADD_OK - 1759512899688</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:11:49 - BIO(200) - 1759494482562</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:07:57 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:06:56 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:06:42 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:06:41 - BIO_FAIL - NO_TOKEN - 1759511152670</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:05:20 - BIO(200) - 1759436533844</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:02:16 - BIO(200) - 1759436533844</div></div>
+<div class="log-item ok"><div class="small">2025-10-03 17:01:44 - ADD_OK - 1759436533844</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 17:01:06 - BIO_FAIL - NO_TOKEN - 1759510836006</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:49:57 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:47:57 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:45:21 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:45:02 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:44:55 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:44:33 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:44:32 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:44:04 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:43:57 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:40:01 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+<div class="log-item warn"><div class="small">2025-10-03 16:39:53 - RESET - 1759505964038</div></div>
+<div class="log-item fail"><div class="small">2025-10-03 16:39:35 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+</div>
+</section>
+</main>
+<aside class="card side">
+<div class="side-stats">
+<div class="stat"><div class="small">التوكنات المحفوظة</div><div><strong>0</strong></div></div>
+<div class="stat"><div class="small">بايوهات محدثة</div><div><strong>16</strong></div></div>
+<div class="stat"><div class="small">آخر حدث</div><div class="small">2025-10-03 18:58:07 - ADD_FAIL - INVALID - 127.0.0.1</div></div>
+</div>
+<div style="height:12px"></div>
+<div class="hacker-title"><span style="font-family:Space Mono,monospace">▶</span><h3 style="margin:0">محطة</h3></div>
+<div class="terminal" id="terminal">
+<div>&gt; النظام جاهز. تفاعل عبر النماذج أعلاه.</div>
+</div>
+</aside>
+</div>
+<div class="footer">
+    © RIZAKYI — C4 TEAM Officiel — 2025
+  </div>
+<div class="toast" id="toast" style="display:none">تم</div>
+<script src="app.js"></script>
+</div></body>
+</html>
